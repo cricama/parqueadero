@@ -1,0 +1,14 @@
+$usuario1=mysqli_real_escape_string($conexion,$_POST['estudiante']);
+$placa=mysqli_real_escape_string($_POST['placa']);
+
+
+$ingresara=mysqli_query($conexion,'insert into placa_vehiculo(	nombre,nregistro) values ("'.$usuario1.'","'.$placa.'")') or die ('<p>Error al registrar</p><br>'.mysqli_error($conexion));
+ //redirección
+
+
+
+and isset($_POST['estudiante']) and isset($_POST['placa'])
+
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=1340238769400450&autoLogAppEvents=1"></script>
+<div class="fb-comments" data-href="https://www.facebook.com/cotecnovacartago" data-width="100%" data-numposts="5"></div>
