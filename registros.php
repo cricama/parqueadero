@@ -8,10 +8,14 @@ $conexion=mysqli_connect('localhost','root','camilo1998','parqueadero') or die (
  <head>
  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <link rel="icon" type="imagenes/png" href="imagenes/descarga.png" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
    <title>Ingresar</title>
    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
    <link rel="stylesheet" href="css/estilo.css" type="text/css">
-
+<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="js/jquery.dataTables.min.js">
   </head>
   <div id="centro12" class="alert alert-secondary  list-group-item-warning">
     <div id="centro1">
@@ -60,7 +64,7 @@ $conexion=mysqli_connect('localhost','root','camilo1998','parqueadero') or die (
 
   <div >
 
-<table id="tabla">
+<table class="container">
 <h1>registro de usuarios</h1>
    <td >id</td>
     <br>
@@ -82,11 +86,14 @@ $conexion=mysqli_connect('localhost','root','camilo1998','parqueadero') or die (
             echo'<td>'  .$mostrar['codigo'].'</td>';
             echo '<td>' .$mostrar['nombre'].'</td>';
             echo '<td>' .$mostrar['nregistro'].'</td>';
+            echo '<td> <a href="eliminar_usuarios.php?id_placa_vehiculo="'.$mostrar['id_placa_vehiculo'].'"><button type="button" class="btn btn-danger">eliminar</button></td>';
+            echo '<td> <a href="actualizar_datos_de_usuarios.php?codigo="'.$mostrar['codigo'].'"><button type="button" class="btn btn-danger">actualizar</button></td>';
             echo '</tr>';
+
 
          }
          mysqli_close($conexion);
-         echo "</table>";
+         // echo "</table>";
          ?>
        </table>
 
@@ -102,6 +109,7 @@ Desarrollado por cristian camilo martinez</p>
        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
        <script type="text/javascript" src="js/jquery.min.js"></script>
      	<!-- Codigo JS Propio -->
-     	<script type="text/javascript" src="js/codigo.js"></script>
+
+
   </body>
 </html>

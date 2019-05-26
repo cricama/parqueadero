@@ -12,3 +12,64 @@ and isset($_POST['estudiante']) and isset($_POST['placa'])
 
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=1340238769400450&autoLogAppEvents=1"></script>
 <div class="fb-comments" data-href="https://www.facebook.com/cotecnovacartago" data-width="100%" data-numposts="5"></div>
+
+
+
+<div class="container">
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">eliminar usuarios</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">eliminar usuarios</h4>
+    </div>
+    <div class="modal-body">
+      <!-- metemos contenido-->
+
+
+
+
+             <div class="btn btn-success">eliminar usuarios </div>
+             <div class="panel panel-body">
+
+           <form action="eliminar.php" method="POST">
+                 <label>  Ingresa id de usuario</label>
+                 <input ttype="text" name="eliminar" class="form-control input-sm" id="estudiante" required required >
+
+                 <div class="invalid-feedback">
+
+                   </div>
+                 <p></p>
+                  <input type="submit" class="btn btn-default" value="eliminar registro" name="eliminador">
+                   <a href="cotecnova_parqueadero.php" class="btn btn-default"required="true">retroceder</a>
+                  </form>
+                 </div>
+                 </form>
+             </div>
+           </div>
+
+
+
+
+           echo '<td> <a href="eliminar_usuarios.php?id_placa_vehiculo="'.$mostrar['id_placa_vehiculo'].'""><button type="button" class="btn btn-danger">eliminar</button></td>';
+
+
+
+
+
+
+             <?php
+             $conexion=mysqli_connect('localhost','root','camilo1998','parqueadero') or die ('Error al conectar con la base de datos');
+             $consulta=consultarproducto($_POST['id_placa_vehiculo'])
+             function consultarproducto($id_placa_vehiculo){
+             	$sentecia="SELECT * FROM placa_vehiculo WHERE id_placa_vehiculo'".$id_placa_vehiculo."'";
+             	$resultado=mysqli_query($sentecia)or die(mysqli_error());
+             	return['id_placa_vehiculo'];
+             }
